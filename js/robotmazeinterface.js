@@ -11,7 +11,6 @@ RobotMazeInterface.prototype.canMove = function (x, y, direction) {
   if (["north","east","south","west"].indexOf(direction) === -1) {
     return false;
   }
-
   switch (direction) {
     case "north":
       forwardX = x;
@@ -36,18 +35,18 @@ RobotMazeInterface.prototype.canMove = function (x, y, direction) {
   }
 
   if (forwardX <= 0 || forwardX > this.maze.width || forwardY <= 0 || forwardY > this.maze.height) {
-    return false
+    return false;
   }
 
   if (this.maze.spaces[x][y][direction]) {
-    return false
+    return false;
   }
 
   if (this.maze.spaces[forwardX][forwardY][forwardDirection]) {
-    return false
+    return false;
   }
 
-  return true
+  return true;
 }
 
 RobotMazeInterface.prototype.render = function () {
@@ -103,7 +102,7 @@ RobotMazeInterface.prototype.renderSpace = function (x,y) {
     southRobotStart: "icon-circle-arrow-down",
     westRobotStart: "icon-circle-arrow-left",
     robotEnd: "icon-ok-sign "
-  }  
+  };
   var $space = $('<i>');
 
   if (isRobot) {
